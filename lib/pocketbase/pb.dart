@@ -1,4 +1,3 @@
-import 'package:login_page/constants/constants.dart';
 import 'package:pocketbase/pocketbase.dart';
 
 class PocketBaseService {
@@ -11,6 +10,7 @@ class PocketBaseService {
   }
 
   PocketBaseService._internal() {
-    pb = PocketBase(Url().pocketbaseUrl);
+    const pocketbaseUrl = String.fromEnvironment('POCKETBASE_URL');
+    pb = PocketBase(pocketbaseUrl);
   }
 }
